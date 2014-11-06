@@ -42,13 +42,17 @@
     </script>
 
     <script type="text/template" id="listTemp">
-      <li class="listItem" id="<%= _id %>">
 
-        <div class="1"><%= model %> by <%= make %> <%= type %></div>
-        <div class="2"><p><%= comments %></p></div>
-        <div class="3"><p><%= price %></p></div>
+
+      <li class="listItem card" id="<%= _id %>">
+
+        <button class="delete hidden">X</button>
+        <div class="card-header"><%= make %> <%= model %></div>
+        <div class="2"><p>Comments: <%= comments %></p></div>
+        <div class="3"><p>Price: $<%= price %></p></div>
 
       </li>
+
 
     </script>
 

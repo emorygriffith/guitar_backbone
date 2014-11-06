@@ -1,13 +1,19 @@
 (function () {
 
+
+
   App.Views.ListGuitar = Backbone.View.extend({
 
     tagName: 'ul',
     className: 'allGuitars',
 
-    events: {},
+    events: {
+      
+    },
 
     template: _.template($('#listTemp').html()),
+
+
 
     initialize: function() {
 
@@ -18,6 +24,8 @@
 
       // Get our Element On Our Page
       $('#guitarList').html(this.$el);
+
+
 
 
     },
@@ -31,6 +39,8 @@
         this.collection.each(function (c) {
           self.$el.append(self.template(c.toJSON()));
         });
+
+
 
         return this;
       }

@@ -14,6 +14,7 @@
 
     home: function () {
       new App.Views.AddGuitar();
+      new App.Views.ListGuitar({ collection: App.guitars });
 
     },
 
