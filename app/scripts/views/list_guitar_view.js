@@ -1,14 +1,14 @@
 (function () {
 
 
-
   App.Views.ListGuitar = Backbone.View.extend({
 
     tagName: 'ul',
     className: 'allGuitars',
 
     events: {
-      
+
+      'click li' : 'gotoEdit'
     },
 
     template: _.template($('#listTemp').html()),
@@ -25,9 +25,6 @@
       // Get our Element On Our Page
       $('#guitarList').html(this.$el);
 
-
-
-
     },
 
     render: function () {
@@ -40,13 +37,15 @@
           self.$el.append(self.template(c.toJSON()));
         });
 
-
-
         return this;
-      }
+      },
 
+    gotoEdit: function (e) {
+     e.preventDefault();
 
-
+     var editID = $(e.currentTarget).attr('id');
+     App.router.navigate('edit/'+editID, {trigger: true});
+    }
 
   });
 

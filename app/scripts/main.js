@@ -11,12 +11,3 @@
   });
 
 }());
-
-// $('.delete').hover(function(){
-//     console.log('mouseover hit');
-//     $(this).removeClass('hidden');
-// },
-//   function () {
-//     console.log('mouseout!');
-//     $(this).addClass('hidden');
-//   });

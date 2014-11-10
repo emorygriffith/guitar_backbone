@@ -24,7 +24,7 @@
   <body>
 
     <div class="hero-unit">
-      <h1>guitars</h1>
+      <h1><a href="#/">Guitars</a></h1>
       <div id="guitarForm"></div>
       <div id="guitarList"></div>
 
@@ -42,18 +42,31 @@
     </script>
 
     <script type="text/template" id="listTemp">
-
-
       <li class="listItem card" id="<%= _id %>">
 
-        <button class="delete hidden">X</button>
         <div class="card-header"><%= make %> <%= model %></div>
         <div class="2"><p>Comments: <%= comments %></p></div>
         <div class="3"><p>Price: $<%= price %></p></div>
 
       </li>
+    </script>
 
 
+    <script type="text/template" id="singleTemp">
+      <li class="card" id="<%= _id %>">
+        <form id="updateGuitar">
+            <div class="card-header">
+              <input type="text" value="<%= make %>" id="update_make" />
+              <input type="text" value="<%= model %>" id="update_model" />
+              <textarea id="update_comments"><%= comments %></textarea>
+              <input type="text" value="<%= price %>" id="update_price" />
+            </div>
+            <div class="card-stats">
+              <button id>Update Guitar</button>
+              <button id="delete">Delete</button>
+            </div>
+        </form>
+      </li>
     </script>
 
     <!-- build:js scripts/vendor.js -->
@@ -76,6 +89,7 @@
         <script src="scripts/models/guitar_models.js"></script>
         <script src="scripts/collections/guitar_collections.js"></script>
         <script src="scripts/views/add_guitar_view.js"></script>
+        <script src="scripts/views/single_guitar_view.js"></script>
         <script src="scripts/views/list_guitar_view.js"></script>
         <script src="scripts/routes/app_router.js"></script>
         <script src="scripts/main.js"></script>

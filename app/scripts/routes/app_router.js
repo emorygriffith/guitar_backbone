@@ -9,6 +9,7 @@
 
     routes: {
       '' : 'home',
+      'edit/:guitarID' : 'editGuitar'
 
     },
 
@@ -17,6 +18,14 @@
       new App.Views.ListGuitar({ collection: App.guitars });
 
     },
+
+    editGuitar: function (guitarID) {
+
+      var c = App.guitars.get(guitarID);
+
+      new App.Views.SingleGuitar({ guitar: c });
+    }
+
 
 
 
