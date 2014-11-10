@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>guitar</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+    <div class="hero-unit">
+      <h1><a href="#/">Guitars</a></h1>
+      <div id="guitarForm"></div>
+      <div id="guitarList"></div>
+
+    </div>
+
+    <script type="text/template" id="addTemp">
+      <form id="addGuitar">
+        <input type="text" id="guitar_type" placeholder="Acoustic or electric?" />
+        <input type="text" id="guitar_make" placeholder="Make" />
+        <input type="text" id="guitar_model" placeholder="Model" />
+        <input type="text" id="guitar_price" placeholder="Price" />
+        <input type="text" id="guitar_comments" placeholder="Comments" />
+        <button>Add Guitar</button>
+      </form>
+    </script>
+
+    <script type="text/template" id="listTemp">
+      <li class="listItem card" id="<%= _id %>">
+
+        <div class="card-header"><%= make %> <%= model %></div>
+        <div class="2"><p>Comments: <%= comments %></p></div>
+        <div class="3"><p>Price: $<%= price %></p></div>
+
+      </li>
+    </script>
+
+
+    <script type="text/template" id="singleTemp">
+      <li class="card" id="<%= _id %>">
+        <form id="updateGuitar">
+            <div class="card-header">
+              <input type="text" value="<%= make %>" id="update_make" />
+              <input type="text" value="<%= model %>" id="update_model" />
+              <textarea id="update_comments"><%= comments %></textarea>
+              <input type="text" value="<%= price %>" id="update_price" />
+            </div>
+            <div class="card-stats">
+              <button id>Update Guitar</button>
+              <button id="delete">Delete</button>
+            </div>
+        </form>
+      </li>
+    </script>
+
+    <script src="scripts/vendor.js"></script>
+
+    <script type="text/javascript">
+        window.App = {};
+        App.Models = {};
+        App.Collections = {};
+        App.Views = {};
+        App.Routers = {};
+    </script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
